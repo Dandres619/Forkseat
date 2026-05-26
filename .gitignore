@@ -1,0 +1,76 @@
+# =========================
+# Dependencias
+# =========================
+node_modules/
+
+# pnpm
+.pnpm-store/
+
+# =========================
+# Build outputs
+# =========================
+dist/
+build/
+coverage/
+
+# Vite
+vite.svg
+
+# =========================
+# Variables de entorno
+# =========================
+.env
+.env.*
+.env.local
+!.env.example
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# Archivos OS
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE / Editores
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Prisma
+# =========================
+apps/api/prisma/dev.db
+apps/api/prisma/dev.db-journal
+
+# =========================
+# Turbo (a futúro)
+# =========================
+.turbo/
+
+# =========================
+# Archivos temporales
+# =========================
+tmp/
+temp/
+.cache/
+
+# =========================
+# Testing
+# =========================
+coverage/
+.nyc_output/
+
+# =========================
+# TypeScript
+# =========================
+*.tsbuildinfo
