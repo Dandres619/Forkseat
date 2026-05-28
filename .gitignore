@@ -7,7 +7,7 @@ node_modules/
 .pnpm-store/
 
 # =========================
-# Build outputs
+# Build
 # =========================
 dist/
 build/
@@ -74,3 +74,5 @@ coverage/
 # TypeScript
 # =========================
 *.tsbuildinfo
+
+AGENTS.md
