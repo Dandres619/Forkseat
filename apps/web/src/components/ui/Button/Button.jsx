@@ -28,7 +28,7 @@ export function Button({
       onClick={onClick}
       className={`
         inline-flex items-center justify-center 
-        cursor-pointer rounded-lg font-medium transition-colors 
+        cursor-pointer rounded-lg font-medium transition-colors duration-500
         disabled:opacity-50 disabled:pointer-events-none 
         ${BUTTON_VARIANTS[variant]} ${BUTTON_SIZES[size]} ${className}
       `}

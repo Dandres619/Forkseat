@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/Button";
 export function Hero() {
   return (
     <section
+      id="hero"
       className="relative bg-cover bg-center bg-no-repeat h-screen flex items-center justify-center"
       style={{ backgroundImage: "url('images/hero.png')" }}
     >
@@ -17,9 +18,7 @@ export function Hero() {
           fechas mas especiales.
         </p>
         <div className="flex justify-center gap-5">
-          <Button size="lg">
-            Pide un domicilio
-          </Button>
+          <Button size="lg">Pide un domicilio</Button>
           <Button variant="alt" size="lg">
             Reserva tu mesa
           </Button>
