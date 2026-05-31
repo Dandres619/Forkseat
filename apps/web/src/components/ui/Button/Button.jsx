@@ -1,11 +1,12 @@
-const variants = {
-    primary: "bg-blue-600 text-white hover:bg-blue-700",
-    secondary: "bg-gray-200 text-gray-900 hover:bg-gray-300",
-    outline: "border border-gray-300 text-gray-700 hover:bg-gray-100",
-    ghost: "text-gray-700 hover:bg-gray-100",
+const BUTTON_VARIANTS = {
+    primary: "bg-amber-600 text-white hover:bg-amber-700",
+    alt: "bg-emerald-600 text-white hover:bg-emerald-700",
+    secondary: "bg-stone-100 text-stone-800 hover:bg-stone-200",
+    outline: "border border-amber-200 text-amber-700 hover:bg-amber-50",
+    ghost: "text-stone-600 hover:bg-amber-50",
     danger: "bg-red-600 text-white hover:bg-red-700",
   },
-  sizes = {
+  BUTTON_SIZES = {
     sm: "px-3 py-1.5 text-sm",
     md: "px-4 py-2 text-base",
     lg: "px-6 py-3 text-lg",
@@ -15,14 +16,22 @@ export function Button({
   variant = "primary",
   size = "md",
   type = "button",
+  onClick,
   disabled = false,
+  className = "",
   children,
 }) {
   return (
     <button
       type={type}
       disabled={disabled}
-      className={`inline-flex items-center justify-center cursor-pointer rounded-lg font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none ${variants[variant]} ${sizes[size]}`}
+      onClick={onClick}
+      className={`
+        inline-flex items-center justify-center 
+        cursor-pointer rounded-lg font-medium transition-colors 
+        disabled:opacity-50 disabled:pointer-events-none 
+        ${BUTTON_VARIANTS[variant]} ${BUTTON_SIZES[size]} ${className}
+      `}
     >
       {children}
     </button>
