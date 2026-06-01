@@ -1,12 +1,11 @@
 import { ClientLayout } from '@/layouts/ClientLayout';
-import { Hero } from '@/features/Home/Hero'
+import { Hero, Dishes } from '@/features/home';
 
 export function HomePage() {
   return (
-    <section>
       <ClientLayout>
         <Hero />
+        <Dishes />
       </ClientLayout>
-    </section>
   )
 }

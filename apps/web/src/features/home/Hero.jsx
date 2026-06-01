@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/Button";
 export function Hero() {
   return (
     <section
-      id="hero"
+      id="inicio"
       className="relative bg-cover bg-center bg-no-repeat h-screen flex items-center justify-center"
       style={{ backgroundImage: "url('images/hero.png')" }}
     >
@@ -11,7 +11,7 @@ export function Hero() {
 
       <div className="relative z-10 text-center px-4 max-w-3xl">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-white drop-shadow-lg">
-          Forkseat
+          Fork & Flame
         </h1>
         <p className="text-lg md:text-xl text-white/80 mb-8">
           Pide domicilio de tu comida favorita o reserva una mesa para tus

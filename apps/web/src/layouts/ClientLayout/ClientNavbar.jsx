@@ -42,18 +42,21 @@ export function ClientNavbar() {
               heroVisible ? "text-white" : "text-amber-600"
             }`}
           >
-            Forkseat
+            Fork & Flame
           </span>
 
           {/* Desktop menu */}
           <div className="hidden md:flex gap-8 text-sm font-medium">
-            <a href="#" className={navLinkClass}>
+            <a href="#inicio" className={navLinkClass}>
               Inicio
             </a>
-            <a href="#" className={navLinkClass}>
+            <a href="#platos" className={navLinkClass}>
               Platos
             </a>
-            <a href="#" className={navLinkClass}>
+            <a href="#reservas" className={navLinkClass}>
+              Reservas
+            </a>
+            <a href="#contacto" className={navLinkClass}>
               Contacto
             </a>
           </div>
