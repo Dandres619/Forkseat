@@ -56,14 +56,12 @@ export function ClientNavbar() {
             <a href="#reservas" className={navLinkClass}>
               Reservas
             </a>
-            <a href="#contacto" className={navLinkClass}>
-              Contacto
-            </a>
           </div>
 
           {/* Button desktop */}
-          <div className="hidden md:block">
-            <Button>Pedir domicilio</Button>
+          <div className="hidden md:flex items-center gap-4">
+            <Button variant={`${heroVisible ? "primary" : "ghost"}`}>Iniciar sesión</Button>
+            <Button variant={`${heroVisible ? "alt" : "ghost"}`}>Registrarse</Button>
           </div>
 
           {/* Mobile button */}
