@@ -16,7 +16,7 @@ export const ClientFooter = () => {
             <ul className="space-y-2.5 text-sm">
               <li><a href="#inicio" className="text-stone-400 hover:text-amber-400 transition-colors">Inicio</a></li>
               <li><a href="#platos" className="text-stone-400 hover:text-amber-400 transition-colors">Platos</a></li>
-              <li><a href="#" className="text-stone-400 hover:text-amber-400 transition-colors">Contacto</a></li>
+              <li><a href="#reservas" className="text-stone-400 hover:text-amber-400 transition-colors">Reservas</a></li>
             </ul>
           </div>
 
