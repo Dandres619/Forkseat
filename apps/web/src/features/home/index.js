@@ -1,3 +1,3 @@
-export { Hero } from './Hero.jsx';
-export { Dishes } from './Dishes.jsx';
-export { Reservation } from './Reservation.jsx';
+export { Hero } from './components/Hero.jsx';
+export { Dishes } from './components/Dishes.jsx';
+export { Reservation } from './components/Reservation.jsx';
