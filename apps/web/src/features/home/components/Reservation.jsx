@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { Card, CardBody } from "@/components/ui/Card";
+import { Link } from "react-router-dom";
 
 const features = [
   {
@@ -44,7 +45,7 @@ const features = [
   {
     title: "Ocasiones especiales",
     description:
-      "Decoramos tu mesa para cumpleaños, aniversarios y fechas especiales. Cuentanos qué celebras.",
+      "Decoramos tu mesa para cumpleaños, aniversarios y fechas especiales. Cuéntanos qué celebras.",
     icon: (
       <svg
         className="size-5 text-amber-600"
@@ -103,9 +104,11 @@ export function Reservation() {
 
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button size="lg">Reservar ahora</Button>
-          <Button size="lg" variant="outline">
-            Ver menú completo
-          </Button>
+          <Link to="menu">
+            <Button size="lg" variant="outline">
+              Ver menú completo
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

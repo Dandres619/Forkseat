@@ -15,7 +15,7 @@ export function Hero() {
         </h1>
         <p className="text-lg md:text-xl text-white/80 mb-8">
           Pide domicilio de tu comida favorita o reserva una mesa para tus
-          fechas mas especiales.
+          fechas más especiales.
         </p>
         <div className="flex justify-center gap-5">
           <Button size="lg">Pide un domicilio</Button>
