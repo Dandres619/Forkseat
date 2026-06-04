@@ -1,89 +1,117 @@
 import { Button } from "@/components/ui/Button";
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+
+const scrollToTop = () => window.scrollTo(0, 0);
 
 export function ClientNavbar() {
-  //isOpen para abrir o cerrar desde el celular
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
   const [isOpen, setIsOpen] = useState(false);
-
-  //heroVisible para saber si los elementos del navbar deben mostrarse de un color u otro
   const [heroVisible, setHeroVisible] = useState(true);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setHeroVisible(window.scrollY < 500);
-    };
-
+    if (!isHome) return;
+    const handleScroll = () => setHeroVisible(window.scrollY < 500);
     window.addEventListener("scroll", handleScroll);
-
     handleScroll();
-
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHome]);
 
-  const navLinkClass = `transition-colors duration-300 ${
-    heroVisible
-      ? "text-white hover:text-amber-200"
-      : "text-stone-600 hover:text-amber-600"
-  }`;
+  const scrolled = isHome ? !heroVisible : true;
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        heroVisible
-          ? "bg-transparent border-b border-transparent"
-          : "bg-white border-b border-amber-200 shadow-sm"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white border-b border-amber-200 shadow-sm"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          {/* Logo */}
-          <span
+          <Link
+            to="/"
+            onClick={scrollToTop}
             className={`text-xl font-bold transition-colors duration-300 ${
-              heroVisible ? "text-white" : "text-amber-600"
+              scrolled ? "text-amber-600" : "text-white"
             }`}
           >
             Fork & Flame
-          </span>
+          </Link>
 
-          {/* Desktop menu */}
           <div className="hidden md:flex gap-8 text-sm font-medium">
-            <a href="#inicio" className={navLinkClass}>
+            <Link
+              to="/"
+              onClick={scrollToTop}
+              className={`transition-colors duration-300 ${
+                scrolled
+                  ? "text-stone-600 hover:text-amber-600"
+                  : "text-white/80 hover:text-white"
+              }`}
+            >
               Inicio
-            </a>
-            <a href="#platos" className={navLinkClass}>
-              Platos
-            </a>
-            <a href="#reservas" className={navLinkClass}>
-              Reservas
-            </a>
+            </Link>
+            <Link
+              to="/menu"
+              onClick={scrollToTop}
+              className={`transition-colors duration-300 ${
+                scrolled
+                  ? "text-stone-600 hover:text-amber-600"
+                  : "text-white/80 hover:text-white"
+              }`}
+            >
+              Menú
+            </Link>
           </div>
 
-          {/* Button desktop */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant={`${heroVisible ? "primary" : "ghost"}`}>Iniciar sesión</Button>
-            <Button variant={`${heroVisible ? "alt" : "ghost"}`}>Registrarse</Button>
+            <Button variant={scrolled ? "ghost" : "primary"}>
+              Iniciar sesión
+            </Button>
+            <Button variant={scrolled ? "ghost" : "alt"}>Registrarse</Button>
           </div>
 
-          {/* Mobile button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`md:hidden transition-colors ${
-              heroVisible ? "text-white" : "text-stone-600"
+              scrolled ? "text-stone-600" : "text-white"
             }`}
           >
-            ☰
+            <svg
+              className="size-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden border-t border-amber-100 bg-amber-50 px-4 py-4 space-y-2">
-          <a className="block">Inicio</a>
-          <a className="block">Platos</a>
-          <a className="block">Contacto</a>
-
-          <Button className="w-full mt-2">Pedir domicilio</Button>
+        <div className="md:hidden border-t border-amber-100 bg-white px-4 py-4 space-y-2 shadow-lg">
+          <Link
+            to="/"
+            onClick={() => { scrollToTop(); setIsOpen(false); }}
+            className="block px-4 py-2.5 text-stone-700 hover:text-amber-700 hover:bg-amber-50 rounded-lg text-base font-medium transition-colors"
+          >
+            Inicio
+          </Link>
+          <Link
+            to="/menu"
+            onClick={() => { scrollToTop(); setIsOpen(false); }}
+            className="block px-4 py-2.5 text-stone-700 hover:text-amber-700 hover:bg-amber-50 rounded-lg text-base font-medium transition-colors"
+          >
+            Menú
+          </Link>
+          <Button className="w-full mt-3">Pedir domicilio</Button>
         </div>
       )}
     </nav>
