@@ -5,8 +5,8 @@ export function HomePage() {
   return (
       <ClientLayout>
         <Hero />
-        <Dishes />
         <Reservation />
+        <Dishes />
       </ClientLayout>
   )
 }

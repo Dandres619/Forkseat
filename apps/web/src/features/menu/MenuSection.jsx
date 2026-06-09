@@ -14,16 +14,15 @@ export function MenuSection() {
         ? [...dishData]
         : dishData.filter((d) => d.category === activeCategory);
 
-    const price = (s) => parseInt(s.replace(/[$.]/g, ""));
     const cmp = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
 
     switch (sortBy) {
       case "nombre":
         return result.sort((a, b) => cmp(a.title, b.title));
       case "precio-asc":
-        return result.sort((a, b) => price(a.price) - price(b.price));
+        return result.sort((a, b) => a.price - b.price);
       case "precio-desc":
-        return result.sort((a, b) => price(b.price) - price(a.price));
+        return result.sort((a, b) => b.price - a.price);
       default:
         return result;
     }

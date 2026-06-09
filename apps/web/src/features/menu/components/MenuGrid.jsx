@@ -1,5 +1,6 @@
 import { Card, CardHeader, CardBody } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import { formatPrice } from "@/utils/formatPrice.js";
 
 function DishCard({ dish }) {
   return (
@@ -18,7 +19,7 @@ function DishCard({ dish }) {
             </span>
           )}
           <span className="absolute bottom-3 right-3 bg-white/90 text-stone-800 text-sm font-bold px-3 py-1 rounded-full shadow-sm">
-            {dish.price}
+            {formatPrice(dish.price)}
           </span>
         </div>
       </CardBody>
